@@ -3,55 +3,48 @@
 @import 'libs/mixins';
 @import 'libs/vendor';
 @import 'libs/breakpoints';
-@import 'libs/html-grid';
 
 /*
-	Hyperspace by HTML5 UP
+	Dimension by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-/* Spotlights */
+/* BG */
 
-	.spotlights {
-		> section {
-			> .image {
-				&:before {
-					opacity: 0 !important;
-				}
+	#bg {
+		body.is-preload & {
+			&:before {
+				background-color: transparent;
+			}
+		}
+	}
+
+/* Header */
+
+	#header {
+		body.is-preload & {
+			> * {
+				opacity: 1;
 			}
 
-			> .content {
-				> .inner {
-					@include vendor('transform', 'none !important');
-					opacity: 1 !important;
+			@include vendor('filter', 'none');
+
+			.content {
+				.inner {
+					max-height: none;
+					padding: 3rem 2rem;
+					opacity: 1;
 				}
 			}
 		}
 	}
 
-/* Wrapper */
+/* Main */
 
-	.wrapper {
-		> .inner {
-			opacity: 1 !important;
-			@include vendor('transform', 'none !important');
-		}
-	}
-
-/* Sidebar */
-
-	#sidebar {
-		> .inner {
-			opacity: 1 !important;
-		}
-
-		nav {
-			> ul {
-				> li {
-					@include vendor('transform', 'none !important');
-					opacity: 1 !important;
-				}
-			}
+	#main {
+		article {
+			opacity: 1;
+			margin: (_size(element-margin) * 2) 0 0 0;
 		}
 	}
