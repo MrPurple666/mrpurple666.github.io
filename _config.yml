@@ -1,0 +1,40 @@
+locale: "pt-BR"
+title: "Antonio \"MrPurple666\""
+title_separator: "|"
+name: "Antonio \"MrPurple666\""
+description: "Programação, arte e projetos open source."
+url: "https://mrpurple666.github.io"
+baseurl: ""
+repository: "MrPurple666/mrpurple666.github.io"
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "catppuccin_mocha"
+plugins:
+  - jekyll-include-cache
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-remote-theme
+masthead_title: "MrPurple666"
+search: false
+breadcrumbs: false
+atom_feed:
+  hide: true
+author:
+  name: "Antonio \"MrPurple666\""
+  bio: "Programador autodidata, artista e contribuidor open source."
+  location: "Brasil"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/MrPurple666"
+    - label: "Spotify"
+      icon: "fab fa-fw fa-spotify"
+      url: "https://open.spotify.com/artist/6IIzCWouZ8TKK5xsC9Zyuu?si=TozHtiHFQmyOWb5RE2zEag"
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
