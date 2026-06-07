@@ -1,6 +1,11 @@
-# Engenharia Reversa de Driver UEFI SMM para Firmware TPM (fTPM)
+---
+title: "Reverse Engineering of fTPM"
+permalink: /projects/ftpm-en/
+---
 
-## Sumário
+# Reverse Engineering of UEFI SMM Driver for Firmware TPM (fTPM)
+
+## Table of Contents
 - [Contexto Técnico e Inicialização](#contexto-técnico-e-inicialização)
 - [Fluxo de Execução Integrado](#fluxo-de-execução-integrado)
 - [Variáveis Globais e Estruturas Críticas](#variáveis-globais-e-estruturas-críticas)
@@ -12,22 +17,22 @@
 
 ---
 
-## Contexto Técnico e Inicialização
+## Technical Context and Initialization
 
-Recentemente conduzi a análise de um driver UEFI SMM que integra um Firmware TPM (fTPM) baseado em ARM TrustZone. O repositório é privado, pois inclui processos internos, handlers e buffers críticos, mas o estudo permite compreender em detalhes a comunicação entre firmware, SMRAM e TPM.
+I recently conducted an analysis of a UEFI SMM driver that integrates an ARM TrustZone-based Firmware TPM (fTPM). The repository is private because it includes critical internal processes, handlers, and buffers, but the study allows for a detailed understanding of the communication between firmware, SMRAM, and TPM.
 
-Este driver atua como uma ponte entre o firmware UEFI e uma *Trusted Application* no TrustZone. Ele não implementa a lógica interna do TPM, mas garante que todas as operações críticas requisitadas pelo Sistema Operacional sejam processadas de forma segura e confiável.
+This driver acts as a bridge between the UEFI firmware and a *Trusted Application* in TrustZone. It does not implement the TPM's internal logic itself but ensures that all critical operations requested by the Operating System are processed securely and reliably.
 
-O driver executa no System Management Mode (SMM), o nível mais privilegiado da CPU, operando de forma invisível ao sistema operacional. A inicialização ocorre em duas fases:
+The driver executes in System Management Mode (SMM), the CPU's most privileged level, operating invisibly to the operating system. Initialization occurs in two phases:
 
 * **DXE Phase:** `InitializeSmmBase` salva handles globais essenciais, localiza protocolos necessários e verifica a existência de hardware fTPM via MMIO no endereço `0xE00D0000`.
 * **SMM Phase:** `FtpmSmmInit` registra os handlers de *Software System Management Interrupts* (SW-SMI), instala a tabela ACPI TPM2 e configura os buffers de comando/resposta (CRB).
 
-A persistência do driver é mantida através de `setjmp` e `longjmp`, permitindo residir em memória mesmo diante de falhas internas.
+Driver persistence is maintained through `setjmp` and `longjmp`, allowing it to reside in memory even in the event of internal failures.
 
 ---
 
-## Fluxo de Execução Integrado
+## Integrated Execution Flow
 
 ```text
 [DXE Phase] InitializeSmmBase
@@ -59,9 +64,9 @@ A persistência do driver é mantida através de `setjmp` e `longjmp`, permitind
 
 ---
 
-## Variáveis Globais e Estruturas Críticas
+## Global Variables and Critical Structures
 
-| Variável | Tipo | Descrição |
+| Variável | Tipo | Description |
 | :--- | :--- | :--- |
 | `gImageHandle` | `EFI_HANDLE` | Handle da imagem do driver |
 | `gSystemTable` | `EFI_SYSTEM_TABLE*` | Ponteiro para a tabela central do sistema |
@@ -69,14 +74,14 @@ A persistência do driver é mantida através de `setjmp` e `longjmp`, permitind
 | `gSmst` | `EFI_SMM_SYSTEM_TABLE2*` | Ponteiro para a Tabela SMM |
 | `gSmmBase2` | `EFI_SMM_BASE2_PROTOCOL*` | Protocolo base da infraestrutura SMM |
 | `gSmmVariable` | `EFI_SMM_VARIABLE_PROTOCOL*` | Protocolo para acesso e controle de variáveis SMM |
-| `gInSmm` | `BOOLEAN` | Flag indicando se a execução está dentro da SMRAM |
-| `gAllocatedPool` | `VOID*` | Buffer de memória pré-alocado dedicado ao fTPM |
+| `gInSmm` | `BOOLEAN` | Flag indicating whether the execution is inside SMRAM |
+| `gAllocatedPool` | `VOID*` | Pre-allocated memory buffer dedicated to fTPM |
 | `gFtpmDeviceFamily` | `UINT32` | Identificador numérico da família do dispositivo fTPM |
-| `gFtpmData` | `FTPM_GLOBAL_DATA*` | Dados compartilhados para controle de PP/MOR |
-| `gFtpmCrbSnapshot` | `TPM2_CRB_CONTROL_AREA` | Snapshot do estado do CRB |
-| `gTpm2AcpiTable` | `TPM2_ACPI_TABLE` | Tabela ACPI TPM2 com tamanho fixo de 52 bytes |
-| `gDriverStatus` | `EFI_STATUS` | Status e código de retorno interno do driver |
-| `gJmpBuf` | `jmp_buf` | Armazena contexto CPU para setjmp/longjmp |
+| `gFtpmData` | `FTPM_GLOBAL_DATA*` | Data shared for PP/MOR control |
+| `gFtpmCrbSnapshot` | `TPM2_CRB_CONTROL_AREA` | Snapshot of CRB state |
+| `gTpm2AcpiTable` | `TPM2_ACPI_TABLE` | TPM2 ACPI Table with a fixed size of 52 bytes |
+| `gDriverStatus` | `EFI_STATUS` | Internal driver status and return code |
+| `gJmpBuf` | `jmp_buf` | Stores CPU context for setjmp/longjmp |
 
 ### FTPM_GLOBAL_DATA (39 bytes, SMRAM)
 
@@ -121,7 +126,7 @@ A tabela ACPI TPM2 é instalada em dois estágios: placeholder e final, com `Add
 
 ---
 
-## Handlers SW-SMI e Interação com o Sistema Operacional
+## SW-SMI Handlers and Operating System Interaction
 
 O SO interage com SMM via variáveis controladas na NVRAM, acionando Software SMIs. Os handlers principais são:
 
@@ -151,7 +156,7 @@ Fluxo dinâmico durante comunicação:
 
 ---
 
-## Observações Técnicas
+## Technical Observations
 
 1. **Limitações de Endereçamento:** gFtpmData é truncado para 32 bits na ACPI.
 2. **Controle Irrestrito:** execução em SMM permite controle total da memória física do sistema.

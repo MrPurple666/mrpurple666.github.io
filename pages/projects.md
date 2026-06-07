@@ -12,6 +12,16 @@ Os projetos open source foram parte fundamental da minha formação. Já contrib
 
 Acredito em compartilhar conhecimento e ajudar outras pessoas a crescerem na área. Essa experiência tem sido gratificante e fortalece meu crescimento pessoal e profissional.
 
+## Meus Projetos
+
+<ul>
+  {% for page in site.pages %}
+    {% if page.url contains '/projects/' and page.url != '/projects/' %}
+      <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
 ## Onde me encontrar
 
 - [GitHub](https://github.com/MrPurple666)
