@@ -6,14 +6,14 @@ permalink: /projects/ftpm-en/
 # Reverse Engineering of UEFI SMM Driver for Firmware TPM (fTPM)
 
 ## Table of Contents
-- [Contexto Técnico e Inicialização](#contexto-técnico-e-inicialização)
-- [Fluxo de Execução Integrado](#fluxo-de-execução-integrado)
-- [Variáveis Globais e Estruturas Críticas](#variáveis-globais-e-estruturas-críticas)
+- [Technical Context and Initialization](#technical-context-and-Initialization)
+- [Integrated Execution Flow](#integrated-execution-flow)
+- [Global Variables and Critical Structures](#Global-variables-and-critical-structures)
   - [FTPM_GLOBAL_DATA](#ftpm_global_data-39-bytes-smram)
   - [TPM2_CRB_CONTROL_AREA](#tpm2_crb_control_area-48-bytes)
   - [TPM2_ACPI_TABLE](#tpm2_acpi_table-52-bytes)
-- [Handlers SW-SMI e Interação com o Sistema Operacional](#handlers-sw-smi-e-interação-com-o-sistema-operacional)
-- [Observações Técnicas](#observações-técnicas)
+- [SW-SMI Handlers and Operating System Interaction](#sw-smi-handlers-and-operating-system-interaction)
+- [Technical Observations](#technical-observations)
 
 ---
 
