@@ -6,16 +6,33 @@ header:
   image: /assets/images/pic01.jpg
 ---
 
-Bem, me chamo Antonio, tenho 17 anos e também sou conhecido como MrPurple666.
+Me chamo Antonio, tenho 20 anos, mas na comunidade sou conhecido como MrPurple666. Minha jornada na tecnologia começou cedo: aos 7 anos, escrevi minhas primeiras linhas de código no meu primeiro celular. Desde então, a curiosidade autodidata tem sido o meu motor.
 
-Comecei a programar aos 7 anos no meu primeiro celular e desde então tenho aprendido de forma autodidata.
+Hoje, atuo no cruzamento entre a engenharia de software e a criatividade. Sou movido pelo trabalho em equipe, pelo compartilhamento de conhecimento aberto e pela necessidade constante de aprender como as coisas funcionam por dentro.
 
-Atualmente domino Python, Flask, HTML/CSS, PHP, GitHub e Linux, incluindo Bash e Shell Script. Também tenho conhecimento em Android, Smali e modificações binárias quando não existe código-fonte disponível.
+---
 
-Hoje estudo C, C++, Java, Assembly e JavaScript. Também sou um artista em ascensão, criando música e outras formas de expressão. Gosto de trabalhar em equipe, compartilhar conhecimento e continuar aprendendo.
+![Stack e Ferramentas](/assets/images/pic04.jpg)
+
+## Stack e Ferramentas
+
+Meu foco técnico abrange tecnologias de alta demanda no mercado e ferramentas essenciais para otimização de baixo nível. Trabalho ativamente com:
+
+*   **C, C++ e Java:** Para o desenvolvimento de aplicações sólidas, engenharia reversa e manipulação de binários (incluindo leitura de Smali) quando o código-fonte não está disponível.
+*   **Next.js e PHP:** Para a construção e arquitetura de sistemas web modernos e escaláveis.
+
+---
+
+## Sistemas Operacionais e Exploração
+
+Minha relação com sistemas operacionais vai muito além do uso convencional; gosto de explorar seus limites. Possuo domínio avançado em Linux (incluindo Bash e Shell Script) e na arquitetura interna do Android. 
+
+Uma das minhas principais contribuições nesse ecossistema foi a criação do **Gentoo on Android**, um projeto que viabiliza a execução da distribuição Gentoo via PRoot dentro do Termux, permitindo rodar um ambiente Linux complexo e altamente customizável diretamente no hardware mobile.
 
 ## Objetivos e futuro
 
 ![Objetivos e futuro](/assets/images/pic03.jpg)
 
-Tenho grandes objetivos para o futuro, como fazer faculdade de ADS e posteriormente cursar filosofia. Também sonho em morar no Japão ou no Canadá e busco crescer tanto profissionalmente quanto pessoalmente. Estou sempre aberto a novas experiências e desafios, porque acredito que o aprendizado é um processo contínuo.
+A tecnologia não anula minha necessidade de criar de outras formas. Sou também um artista em ascensão, explorando a música e outras mídias como formas complementares de expressão. 
+
+Atualmente, sou estudante de Análise e Desenvolvimento de Sistemas (ADS), o que tem fortalecido minha base teórica e profissional. Meus planos para o futuro envolvem cursar Filosofia — para expandir minha compreensão sobre as bases do pensamento e da sociedade — e realizar o sonho de morar em Portugal ou no Canadá. Busco o crescimento contínuo, tanto pessoal quanto técnico, sempre aberto a novos desafios e experiências.
