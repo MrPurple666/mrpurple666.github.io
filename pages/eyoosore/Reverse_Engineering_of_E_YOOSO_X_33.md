@@ -112,7 +112,7 @@ Zero protocol logic. The real magic is in `OemDrv.exe`.
 
 ## Ghidra to the Rescue
 
-I loaded `OemDrv.exe` into Ghidra (with the MCP bridge for programmatic access, which was a game-changer). The binary is a Delphi-compiled Win32 GUI application. It's huge, with spaghetti control flow typical of VCL event-driven code.
+I loaded `OemDrv.exe` into Ghidra. The binary is a Delphi-compiled Win32 GUI application. It's huge, with spaghetti control flow typical of VCL event-driven code.
 
 The first breakthrough came from tracing the HID wrapper loader:
 
