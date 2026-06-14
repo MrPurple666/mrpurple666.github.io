@@ -28,7 +28,8 @@ search: false
   overflow: hidden;
 }
 
-.layout--single .page__hero:not(.page__hero--overlay) + #main .page__inner-wrap > header {
+.layout--single .page__hero:not(.page__hero--overlay) + #main .page__inner-wrap > header,
+.layout--single .page__hero--overlay #page-title {
   display: none;
 }
 
