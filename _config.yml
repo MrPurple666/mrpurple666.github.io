@@ -1,8 +1,8 @@
-locale: "pt-BR"
+locale: "en"
 title: "Antonio \"MrPurple666\""
 title_separator: "|"
 name: "Antonio \"MrPurple666\""
-description: "Programação, arte e projetos open source."
+description: "Programming, art, and open source projects."
 url: "https://mrpurple666.github.io"
 baseurl: ""
 repository: "MrPurple666/mrpurple666.github.io"
@@ -38,4 +38,3 @@ defaults:
     values:
       layout: single
       author_profile: true
-

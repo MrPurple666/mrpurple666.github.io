@@ -1,0 +1,59 @@
+{% assign current_lang = include.current_lang | default: page.lang | default: page.locale | default: site.locale | default: 'en' %}
+{% assign locale = include.locale | default: current_lang %}
+{% assign nav_items = site.data.navigation[current_lang].main %}
+{% if nav_items == nil %}
+  {% assign nav_items = site.data.navigation.en.main %}
+{% endif %}
+{% assign locale_data = site.data.ui-text[locale] | default: site.data.ui-text.en %}
+{% capture logo_path %}{{ site.logo }}{% endcapture %}
+
+{% if current_lang == 'pt-BR' %}
+  {% assign switch_url = include.alternate_url | default: page.alternate_url | default: '/' %}
+  {% assign switch_label = 'EN' %}
+  {% assign home_url = '/pt/' %}
+{% else %}
+  {% assign switch_url = include.alternate_url | default: page.alternate_url | default: '/pt/' %}
+  {% assign switch_label = 'PT' %}
+  {% assign home_url = '/' %}
+{% endif %}
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+        {% unless logo_path == empty %}
+          <a class="site-logo" href="{{ home_url | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
+        {% endunless %}
+        <a class="site-title" href="{{ home_url | relative_url }}">
+          {{ site.masthead_title | default: site.title | escape_once | strip }}
+          {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle | escape_once | strip }}</span>{% endif %}
+        </a>
+        <ul class="visible-links">
+          {%- for link in nav_items -%}
+            <li class="masthead__menu-item">
+              <a
+                href="{{ link.url | relative_url }}"
+                {% if link.description %} title="{{ link.description }}"{% endif %}
+                {% if link.target %} target="{{ link.target }}"{% endif %}
+              >{{ link.title }}</a>
+            </li>
+          {%- endfor -%}
+          <li class="masthead__menu-item masthead__menu-item--lang">
+            <a class="lang-switcher" href="{{ switch_url | relative_url }}">{{ switch_label }}</a>
+          </li>
+        </ul>
+        {% if site.search == true %}
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">{{ locale_data.search_label | default: "Toggle search" }}</span>
+          <i class="fas fa-search"></i>
+        </button>
+        {% endif %}
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">{{ locale_data.menu_label | default: "Toggle menu" }}</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>

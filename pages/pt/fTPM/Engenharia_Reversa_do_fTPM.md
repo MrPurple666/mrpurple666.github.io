@@ -1,6 +1,12 @@
 ---
 title: "Engenharia Reversa do fTPM"
-permalink: /projects/ftpm-pt/
+permalink: /pt/projects/ftpm/
+layout: single
+lang: pt-BR
+locale: pt-BR
+project: true
+translation_key: project-ftpm
+alternate_url: /projects/ftpm/
 ---
 
 # Engenharia Reversa de Driver UEFI SMM para Firmware TPM (fTPM)

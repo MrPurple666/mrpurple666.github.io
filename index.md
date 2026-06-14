@@ -1,21 +1,26 @@
 ---
-title: "Início"
+title: "Home"
 permalink: /
 layout: single
 author_profile: true
+lang: en
+locale: en
+translation_key: home
+alternate_url: /pt/
 header:
   overlay_image: /assets/images/bg.jpg
-excerpt: "Explorando os limites do hardware e do software."
+excerpt: "Exploring the limits of hardware and software."
 ---
 
 # Antonio "MrPurple666"
 
-Sou um desenvolvedor apaixonado por entender como a tecnologia funciona por baixo dos panos. Com foco em engenharia reversa, otimização de sistemas e desenvolvimento open source, dedico meu tempo a desmontar, criar e modificar soluções que unem técnica e arte.
-​Aqui você encontra minha trajetória, meus projetos técnicos e as redes para acompanhar meu trabalho de perto.
+I am a developer driven by understanding how technology works under the hood. With a focus on reverse engineering, systems optimization, and open source development, I spend my time taking systems apart, building new ones, and reshaping the tools I use.
 
-## Links principais
+Here you can find my trajectory, technical projects, and the links that best reflect my work.
+
+## Main links
 
 - [GitHub](https://github.com/MrPurple666)
 - [Spotify](https://open.spotify.com/artist/6IIzCWouZ8TKK5xsC9Zyuu?si=TozHtiHFQmyOWb5RE2zEag)
-- [Sobre](/about/)
-- [Projetos](/projects/)
+- [About](/about/)
+- [Projects](/projects/)

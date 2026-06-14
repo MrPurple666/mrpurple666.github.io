@@ -1,6 +1,12 @@
 ---
 title: "Reverse Engineering the E-YOOSO X-33"
-permalink: /projects/eyoosore-en/
+permalink: /projects/eyoosore/
+layout: single
+lang: en
+locale: en
+project: true
+translation_key: project-eyoosore
+alternate_url: /pt/projects/eyoosore/
 header:
   image: /assets/images/eyoosore1.png
 ---

@@ -1,6 +1,12 @@
 ---
 title: "Engenharia Reversa do Mouse E-YOOSO X-33"
-permalink: /projects/eyoosore/
+permalink: /pt/projects/eyoosore/
+layout: single
+lang: pt-BR
+locale: pt-BR
+project: true
+translation_key: project-eyoosore
+alternate_url: /projects/eyoosore/
 header:
   image: /assets/images/eyoosore1.png
 ---

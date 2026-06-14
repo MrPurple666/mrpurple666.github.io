@@ -1,5 +1,12 @@
-main:
-  - title: "Sobre"
-    url: /about/
-  - title: "Projetos"
-    url: /projects/
+en:
+  main:
+    - title: "About"
+      url: /about/
+    - title: "Projects"
+      url: /projects/
+pt-BR:
+  main:
+    - title: "Sobre"
+      url: /pt/about/
+    - title: "Projetos"
+      url: /pt/projects/

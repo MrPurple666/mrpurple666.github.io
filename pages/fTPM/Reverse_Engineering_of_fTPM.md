@@ -1,6 +1,12 @@
 ---
 title: "Reverse Engineering of fTPM"
-permalink: /projects/ftpm-en/
+permalink: /projects/ftpm/
+layout: single
+lang: en
+locale: en
+project: true
+translation_key: project-ftpm
+alternate_url: /pt/projects/ftpm/
 ---
 
 # Reverse Engineering of UEFI SMM Driver for Firmware TPM (fTPM)

@@ -42,3 +42,17 @@ search: false
     object-position: center;
   }
 }
+
+.lang-switcher {
+  display: inline-block;
+  min-width: 2.75rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  line-height: 1;
+  text-align: center;
+}
+
+.masthead__menu-item--lang {
+  margin-left: 0.5rem;
+}

@@ -1,38 +1,42 @@
 ---
-title: "Sobre"
+title: "About"
 permalink: /about/
 layout: single
+lang: en
+locale: en
+translation_key: about
+alternate_url: /pt/about/
 header:
   image: /assets/images/pic01.jpg
 ---
 
-Me chamo Antonio, tenho 20 anos, mas na comunidade sou conhecido como MrPurple666. Minha jornada na tecnologia começou cedo: aos 7 anos, escrevi minhas primeiras linhas de código no meu primeiro celular. Desde então, a curiosidade autodidata tem sido o meu motor.
+My name is Antonio, although online I am better known as MrPurple666. My path in technology started early: at seven years old I wrote my first lines of code on my first phone. Since then, self-directed curiosity has been the engine behind everything I do.
 
-Hoje, atuo no cruzamento entre a engenharia de software e a criatividade. Sou movido pelo trabalho em equipe, pelo compartilhamento de conhecimento aberto e pela necessidade constante de aprender como as coisas funcionam por dentro.
-
----
-
-![Stack e Ferramentas](/assets/images/pic04.jpg)
-
-## Stack e Ferramentas
-
-Meu foco técnico abrange tecnologias de alta demanda no mercado e ferramentas essenciais para otimização de baixo nível. Trabalho ativamente com:
-
-*   **C, C++ e Java:** Para o desenvolvimento de aplicações sólidas, engenharia reversa e manipulação de binários (incluindo leitura de Smali) quando o código-fonte não está disponível.
-*   **Next.js e PHP:** Para a construção e arquitetura de sistemas web modernos e escaláveis.
+Today I work at the intersection of software engineering and creativity. I am motivated by teamwork, open knowledge sharing, and the constant need to understand how systems behave internally.
 
 ---
 
-## Sistemas Operacionais e Exploração
+![Stack and Tools](/assets/images/pic04.jpg)
 
-Minha relação com sistemas operacionais vai muito além do uso convencional; gosto de explorar seus limites. Possuo domínio avançado em Linux (incluindo Bash e Shell Script) e na arquitetura interna do Android. 
+## Stack and Tools
 
-Uma das minhas principais contribuições nesse ecossistema foi a criação do **Gentoo on Android**, um projeto que viabiliza a execução da distribuição Gentoo via PRoot dentro do Termux, permitindo rodar um ambiente Linux complexo e altamente customizável diretamente no hardware mobile.
+My technical focus spans high-demand technologies and essential tools for low-level optimization. I actively work with:
 
-## Objetivos e futuro
+* **C, C++, and Java:** for solid application development, reverse engineering, and binary analysis, including Smali reading when source code is unavailable.
+* **Next.js and PHP:** for building and structuring modern, scalable web systems.
 
-![Objetivos e futuro](/assets/images/pic03.jpg)
+---
 
-A tecnologia não anula minha necessidade de criar de outras formas. Sou também um artista em ascensão, explorando a música e outras mídias como formas complementares de expressão. 
+## Operating Systems and Exploration
 
-Atualmente, sou estudante de Análise e Desenvolvimento de Sistemas (ADS), o que tem fortalecido minha base teórica e profissional. Meus planos para o futuro envolvem cursar Filosofia — para expandir minha compreensão sobre as bases do pensamento e da sociedade — e realizar o sonho de morar em Portugal ou no Canadá. Busco o crescimento contínuo, tanto pessoal quanto técnico, sempre aberto a novos desafios e experiências.
+My relationship with operating systems goes far beyond conventional use; I like exploring their limits. I have advanced familiarity with Linux, including Bash and shell scripting, and with Android internals.
+
+One of my main contributions in that ecosystem was creating **Gentoo on Android**, a project that makes it possible to run Gentoo through PRoot inside Termux, enabling a complex and highly customizable Linux environment directly on mobile hardware.
+
+## Goals and Future
+
+![Goals and Future](/assets/images/pic03.jpg)
+
+Technology does not cancel my need to create in other ways. I am also an emerging artist, exploring music and other media as complementary forms of expression.
+
+I am currently studying Systems Analysis and Development, which has strengthened my technical and theoretical foundation. My future plans include studying Philosophy to expand my understanding of thought and society, and eventually living in Portugal or Canada. I am always pursuing growth, both personal and technical, and I remain open to new challenges and experiences.

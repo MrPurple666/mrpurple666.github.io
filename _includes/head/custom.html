@@ -1,0 +1,9 @@
+{% if page.alternate_url and page.lang %}
+  {% if page.lang == 'pt-BR' %}
+    {% assign alternate_lang = 'en' %}
+  {% else %}
+    {% assign alternate_lang = 'pt-BR' %}
+  {% endif %}
+  <link rel="alternate" hreflang="{{ page.lang }}" href="{{ page.url | absolute_url }}">
+  <link rel="alternate" hreflang="{{ alternate_lang }}" href="{{ page.alternate_url | absolute_url }}">
+{% endif %}
