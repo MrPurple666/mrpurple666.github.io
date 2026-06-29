@@ -229,4 +229,4 @@ That is why I built it. Not to add another emulator to the world, but to close a
 
 ---
 
-*Source: [github.com/mrpurple/PurpleGB](https://github.com/mrpurple/PurpleGB)*
+*Source: [github.com/MrPurple666/PurpleGB](https://github.com/MrPurple666/PurpleGB)*

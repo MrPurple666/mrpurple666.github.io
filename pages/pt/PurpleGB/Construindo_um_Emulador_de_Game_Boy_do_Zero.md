@@ -229,4 +229,4 @@ Foi por isso que eu construí isso. Não pra adicionar mais um emulador no mundo
 
 ---
 
-*Fonte: [github.com/mrpurple/PurpleGB](https://github.com/mrpurple/PurpleGB)*
+*Fonte: [github.com/MrPurple666/PurpleGB](https://github.com/MrPurple666/PurpleGB)*
