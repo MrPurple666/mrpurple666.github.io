@@ -21,7 +21,7 @@ Se você passou algum tempo na cena de emulação, provavelmente me conhece como
 
 Mas tem uma coisa que eu nunca tinha feito: construir um emulador do zero.
 
-Eu já fiz patches, perfilou gargalos e corrigiu bugs críticos nos projetos de outras pessoas. Mas a fatia vertical completa, desde CPU e barramento de memória até PPU, APU e mapeadores de cartucho, desde ligar a energia até o primeiro pixel, sempre foi arquitetura de outra pessoa. Eu sabia como emuladores funcionavam porque vivi dentro deles por anos. Só nunca tinha construído um.
+Eu já fiz patches, perfilei gargalos e corrigi bugs críticos nos projetos de outras pessoas. Mas a fatia vertical completa, desde CPU e barramento de memória até PPU, APU e mapeadores de cartucho, desde ligar a energia até o primeiro pixel, sempre foi arquitetura de outra pessoa. Eu sabia como emuladores funcionavam porque vivi dentro deles por anos. Só nunca tinha construído um.
 
 Essa lacuna me incomodava. Você só pode ler tantos diagramas de timing de PPU e revisões do Pan Docs antes de começar a se perguntar se realmente *entende*, ou se é apenas muito bom em reconhecer padrões nas implementações dos outros.
 
