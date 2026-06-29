@@ -185,6 +185,19 @@ I knew because I had built it all, from main() to the last pixel.
 
 ---
 
+## Update: What Changed After This Post
+
+The latest PurpleGB commits did not change the goal of the article; they replaced a few shortcuts that were useful while debugging but wrong as emulator behavior.
+
+- `c304221` replaces the hand-built boot-logo splash path with an embedded Bootix DMG boot ROM. The emulator now starts at `$0000`, runs the boot ROM until it disables itself through `$FF50`, and then exposes cartridge code at `$0100`.
+- `d8ca59e` removes cleanup debt: the dead APU model, unused fake boot-logo path, persistent undefined-op tracing, unreachable deferred-DMA state, incomplete tray scaffolding, duplicate ROM-load code, unused PPU SDL include, and unused state fields.
+- `1e695fc` fixes PPU color handling by keeping raw BG/window color indices before palette mapping. That matters for sprite priority, because DMG sprite priority checks whether the BG color index is zero, not whether the final grayscale value happens to be white.
+- `d6a6a2a` fixes the I/O dispatch bug described above: `$FF41-$FF45`, `$FF47-$FF49`, and `$FF4A-$FF4B` are normal LCD/status/scroll/palette/window registers; only `$FF46` is OAM DMA.
+
+So the historical debugging story above stays as written, but the current emulator no longer relies on the temporary splash-screen workaround or the broken grouped I/O handler that caused the color and DMA corruption.
+
+---
+
 ## Current Status
 
 PurpleGB is a single-day implementation. It is not a showcase emulator. It does not have save states, rewind, netplay, or a fancy shader pipeline. What it has:
@@ -197,7 +210,7 @@ PurpleGB is a single-day implementation. It is not a showcase emulator. It does 
 | Joypad (P1 register, SDL3 input) | ⚠️ Partial |
 | MBC1/3/5 cartridge banking | ⚠️ Partial |
 | Interrupt controller (VBlank/STAT/Timer/Serial/Joypad) | ⚠️ Partial |
-| Boot logo (software decode) | ⚠️ Partial |
+| Boot logo / Bootix boot ROM path | ⚠️ Partial |
 | Drag-and-drop ROM loading | ⚠️ Partial |
 | ESC pause overlay | ⚠️ Partial |
 | System tray icon | ⚠️ Partial |
