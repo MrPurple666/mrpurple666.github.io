@@ -236,8 +236,8 @@ Então a história de debug acima continua como registro do processo, mas o emul
 
 - [Pan Docs](https://gbdev.io/pandocs/) — a referência técnica canônica do Game Boy. Cada registrador, cada comportamento de flag, cada quirk da PPU documentado num só lugar.
 - [SameBoy](https://sameboy.github.io/) e [BGB](https://bgb.bircd.org/) — emuladores de referência que eu comparei quando minha saída estava errada e eu precisava saber como "certo" deveria parecer.
-- [Bootix](https://github.com/Ashiepaws/Bootix) — a disassembly da boot ROM em `references/Bootix/bootix_dmg.asm` que me permitiu verificar meu algoritmo de expansão de nibble contra o comportamento real do hardware.
-- [SDL3](https://libsdl.org/) — a framework que cuida de janela, input e stream de áudio, pra eu poder focar na emulação em si.
+- [Bootix](https://github.com/Ashiepaws/Bootix) — O disassembly da boot ROM em `references/Bootix/bootix_dmg.asm` que me permitiu verificar meu algoritmo de expansão de nibble contra o comportamento real do hardware.
+- [SDL3](https://libsdl.org/) — O framework que cuida de janela, input e stream de áudio, pra eu poder focar na emulação em si.
 - A comunidade de emulação do Game Boy — por décadas de engenharia reversa, ROMs de teste e conhecimento compartilhado que torna projetos como esse possíveis em um único dia.
 
 ---
