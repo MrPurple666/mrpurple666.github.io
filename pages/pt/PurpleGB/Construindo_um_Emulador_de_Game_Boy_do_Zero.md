@@ -185,19 +185,6 @@ Eu sabia porque eu tinha construído tudo, desde main() até o último pixel.
 
 ---
 
-## Atualização: O Que Mudou Depois Deste Post
-
-Os commits mais recentes do PurpleGB não mudaram a ideia do artigo; eles substituíram alguns atalhos que ajudavam durante o debug, mas estavam errados como comportamento de emulador.
-
-- `c304221` troca o caminho de splash de boot logo feito à mão por uma boot ROM DMG do Bootix embutida. Agora o emulador começa em `$0000`, roda a boot ROM até ela se desativar por `$FF50`, e só então expõe o código do cartucho em `$0100`.
-- `d8ca59e` remove dívida de limpeza: o modelo morto de APU, o caminho falso de boot logo, o tracing persistente de opcode indefinido, o estado inalcançável de DMA adiado, o scaffolding incompleto de bandeja, código duplicado de carregamento de ROM, o include SDL não usado na PPU e campos de estado não usados.
-- `1e695fc` corrige o tratamento de cores da PPU mantendo os índices crus de cor de BG/window antes do mapeamento pela paleta. Isso importa para prioridade de sprites, porque no DMG a prioridade checa se o índice de cor do BG é zero, não se o tom final de cinza ficou branco.
-- `d6a6a2a` corrige o bug de dispatch de I/O descrito acima: `$FF41-$FF45`, `$FF47-$FF49` e `$FF4A-$FF4B` são registradores normais de LCD/status/scroll/paleta/window; só `$FF46` é OAM DMA.
-
-Então a história de debug acima continua como registro do processo, mas o emulador atual não depende mais do workaround temporário de splash screen nem do handler agrupado de I/O que causava a corrupção de cores e DMA.
-
----
-
 ## Status Atual
 
 O PurpleGB é uma implementação de um dia. Não é um emulador pra mostrar. Não tem save states, rewind, netplay, ou um pipeline chique de shaders. O que ele tem:
@@ -229,6 +216,19 @@ O PurpleGB nunca vai competir com SameBoy ou BGB. Seu timing de PPU é aproximad
 Mas ele me ensinou algo que aqueles emuladores não podiam: como é sentar na frente de uma tela branca às 2 da manhã, sabendo que em algum lugar em 2600 linhas de C, um único bit está errado e você tem que encontrar ele. Como é ver aspas e apóstrofos espalhados numa tela corrompida, e reconhecê-los como fragmentos de uma mensagem de copyright que você ainda não mereceu. Como é finalmente ver o logo da Nintendo. Não porque você carregou uma ROM, mas porque o seu algoritmo de expansão de nibble, traçado através de quatro iterações de RL B e RLA, produziu o padrão de bits certo.
 
 Foi por isso que eu construí isso. Não pra adicionar mais um emulador no mundo, mas pra fechar uma lacuna que eu carregava há anos.
+
+---
+
+## Atualização: O Que Mudou Depois Deste Post
+
+Os commits mais recentes do PurpleGB não mudaram a ideia do artigo; eles substituíram alguns atalhos que ajudavam durante o debug, mas estavam errados como comportamento de emulador.
+
+- `c304221` troca o caminho de splash de boot logo feito à mão por uma boot ROM DMG do Bootix embutida. Agora o emulador começa em `$0000`, roda a boot ROM até ela se desativar por `$FF50`, e só então expõe o código do cartucho em `$0100`.
+- `d8ca59e` remove dívida de limpeza: o modelo morto de APU, o caminho falso de boot logo, o tracing persistente de opcode indefinido, o estado inalcançável de DMA adiado, o scaffolding incompleto de bandeja, código duplicado de carregamento de ROM, o include SDL não usado na PPU e campos de estado não usados.
+- `1e695fc` corrige o tratamento de cores da PPU mantendo os índices crus de cor de BG/window antes do mapeamento pela paleta. Isso importa para prioridade de sprites, porque no DMG a prioridade checa se o índice de cor do BG é zero, não se o tom final de cinza ficou branco.
+- `d6a6a2a` corrige o bug de dispatch de I/O descrito acima: `$FF41-$FF45`, `$FF47-$FF49` e `$FF4A-$FF4B` são registradores normais de LCD/status/scroll/paleta/window; só `$FF46` é OAM DMA.
+
+Então a história de debug acima continua como registro do processo, mas o emulador atual não depende mais do workaround temporário de splash screen nem do handler agrupado de I/O que causava a corrupção de cores e DMA.
 
 ---
 
