@@ -185,19 +185,6 @@ I knew because I had built it all, from main() to the last pixel.
 
 ---
 
-## Update: What Changed After This Post
-
-The latest PurpleGB commits did not change the goal of the article; they replaced a few shortcuts that were useful while debugging but wrong as emulator behavior.
-
-- `c304221` replaces the hand-built boot-logo splash path with an embedded Bootix DMG boot ROM. The emulator now starts at `$0000`, runs the boot ROM until it disables itself through `$FF50`, and then exposes cartridge code at `$0100`.
-- `d8ca59e` removes cleanup debt: the dead APU model, unused fake boot-logo path, persistent undefined-op tracing, unreachable deferred-DMA state, incomplete tray scaffolding, duplicate ROM-load code, unused PPU SDL include, and unused state fields.
-- `1e695fc` fixes PPU color handling by keeping raw BG/window color indices before palette mapping. That matters for sprite priority, because DMG sprite priority checks whether the BG color index is zero, not whether the final grayscale value happens to be white.
-- `d6a6a2a` fixes the I/O dispatch bug described above: `$FF41-$FF45`, `$FF47-$FF49`, and `$FF4A-$FF4B` are normal LCD/status/scroll/palette/window registers; only `$FF46` is OAM DMA.
-
-So the historical debugging story above stays as written, but the current emulator no longer relies on the temporary splash-screen workaround or the broken grouped I/O handler that caused the color and DMA corruption.
-
----
-
 ## Current Status
 
 PurpleGB is a single-day implementation. It is not a showcase emulator. It does not have save states, rewind, netplay, or a fancy shader pipeline. What it has:
@@ -229,6 +216,19 @@ PurpleGB will never compete with SameBoy or BGB. Its PPU timing is approximate, 
 But it taught me something those emulators could not: what it feels like to sit in front of a white screen at 2 AM, knowing that somewhere in 2600 lines of C, a single bit is wrong and you have to find it. What it feels like to see quotation marks and apostrophes scattered on a corrupted screen, and recognize them as fragments of a copyright message you have not yet earned. What it feels like to finally see the Nintendo logo. Not because you loaded a ROM, but because your nibble expansion algorithm, traced through four iterations of RL B and RLA, produced the right bit pattern.
 
 That is why I built it. Not to add another emulator to the world, but to close a gap I had carried for years.
+
+---
+
+## Update: What Changed After This Post
+
+The latest PurpleGB commits did not change the goal of the article; they replaced a few shortcuts that were useful while debugging but wrong as emulator behavior.
+
+- `c304221` replaces the hand-built boot-logo splash path with an embedded Bootix DMG boot ROM. The emulator now starts at `$0000`, runs the boot ROM until it disables itself through `$FF50`, and then exposes cartridge code at `$0100`.
+- `d8ca59e` removes cleanup debt: the dead APU model, unused fake boot-logo path, persistent undefined-op tracing, unreachable deferred-DMA state, incomplete tray scaffolding, duplicate ROM-load code, unused PPU SDL include, and unused state fields.
+- `1e695fc` fixes PPU color handling by keeping raw BG/window color indices before palette mapping. That matters for sprite priority, because DMG sprite priority checks whether the BG color index is zero, not whether the final grayscale value happens to be white.
+- `d6a6a2a` fixes the I/O dispatch bug described above: `$FF41-$FF45`, `$FF47-$FF49`, and `$FF4A-$FF4B` are normal LCD/status/scroll/palette/window registers; only `$FF46` is OAM DMA.
+
+So the historical debugging story above stays as written, but the current emulator no longer relies on the temporary splash-screen workaround or the broken grouped I/O handler that caused the color and DMA corruption.
 
 ---
 
